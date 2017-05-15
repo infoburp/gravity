@@ -14,7 +14,7 @@ window.onresize = function(event) {
   renderer.resize(window.innerWidth, window.innerHeight);
 };
 var opts = {
-  "objects" : 3,
+  "objects" : 300,
   "mass" : 100
 }
 var fps;
@@ -71,6 +71,15 @@ function update(delta){
     }
     if(cells[i].y >= renderer.height && cells[i].vecy > 0){
       cells[i].vecy *= -0.5;
+    }
+    //check for collision with other cells
+    for(j=0;j<cells.length;j++){
+      for(b=0;b<cells.length;b++){
+        if(cells[i].x == cells[j].x && cells[i].y == cells[j].y){
+          cells[i].vecx *= 0.5;
+          cells[i].vecy *= 0.5;
+        }
+      }
     }
     //update location
     cells[i].x += cells[i].vecx;
