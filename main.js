@@ -75,7 +75,7 @@ function update(delta){
     //check for collision with other cells
     for(j=0;j<cells.length;j++){
       for(b=0;b<cells.length;b++){
-        if(cells[i].x == cells[j].x && cells[i].y == cells[j].y && str(i) + ' ' + str(a) != str(j) + ' ' + str(b)){
+        if(cells[i].x == cells[j].x && cells[i].y == cells[j].y && String(i) + ' ' + String(a) != String(j) + ' ' + String(b)){
           
           cells[i].vecx = cells[i].vecx / 2;
           cells[i].vecy = cells[i].vecy / 2;
