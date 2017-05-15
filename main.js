@@ -14,7 +14,7 @@ window.onresize = function(event) {
   renderer.resize(window.innerWidth, window.innerHeight);
 };
 var opts = {
-  "objects" : 300,
+  "objects" : 6,
   "mass" : 100
 }
 var fps;
